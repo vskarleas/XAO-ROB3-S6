@@ -25,7 +25,7 @@ You will find plenty different things including:
 
 **Disclaimer:**
 
-While the materials in this repository are intended for educational purposes, it is important to note that:
+While the materials in this repository are intended for educational purposes, it is important to note that :
 
 * The information provided is for reference only and may not be complete or entirely accurate.
 * Students are responsible for verifying the information presented with other sources and course materials.
