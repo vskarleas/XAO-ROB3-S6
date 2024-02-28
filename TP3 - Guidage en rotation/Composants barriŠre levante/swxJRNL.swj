@@ -1,0 +1,1549 @@
+' ******************************************************************************
+' swxJRNL.swj - journal recorded on 10/18/05 by ivan
+' *****************************************************************************
+Dim swApp As Object
+Dim Part As Object
+Dim boolstatus As Boolean
+Dim longstatus As Long
+Dim Annotation As Object
+Dim Gtol As Object
+Dim DatumTag As Object
+Dim FeatureData As Object
+Dim Feature As Object
+Dim Component As Object
+Sub main()
+
+Set swApp = Application.SldWorks
+
+Set Part = swApp.OpenDoc4 ("D:\Documents and Settings\ivan\Bureau\barr  Fichiers SW\SINUSMATIC\Ensemble fourche.SLDASM", 2, 0, "", longstatus)
+Set Part = swApp.ActivateDoc ("Ensemble fourche.SLDASM")
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+swApp.ActiveDoc.ActiveView.FrameState = 1
+swApp.ActiveDoc.ActiveView.FrameState = 1
+swApp.LoadFile2 "D:\Documents and Settings\ivan\Bureau\barr  Fichiers SW\SINUSMATIC.SLDASM", ""
+Set Part = swApp.ActiveDoc
+Set Part = swApp.OpenDoc4 ("D:\Documents and Settings\ivan\Bureau\barr  Fichiers SW\SINUSMATIC.SLDASM", 2, 0, "", longstatus)
+' MSGBOX
+' L'ID interne du document D:\Documents and Settings\ivan\Bureau\barr  Fichiers SW\SINUSMATIC\Roulement a billes SKF 6005_inn_ring.SLDPRT ne correspond pas à l'ID interne enregistré avec le document de référence.  Sélectionnez OUI pour accepter quand même ce document. Sélectionnez NON pour chercher avec Parcourir un modèle de remplacement.
+
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("SINUSMATIC.SLDASM")
+boolstatus = Part.Extension.SelectByID("Ensemble arbre de sortie du reducteur-1@SINUSMATIC/Roulement a billes SKF 6000-1@Ensemble arbre de sortie du reducteur", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+Part.Save2 FALSE
+Part.ClearSelection
+Set Part = Nothing
+swApp.CloseDoc "SINUSMATIC.SLDASM"
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Ensemble fourche.SLDASM")
+swApp.LoadFile2 "D:\Documents and Settings\ivan\Bureau\barr  Fichiers SW\SINUSMATIC.SLDASM", ""
+Set Part = swApp.ActiveDoc
+Set Part = swApp.OpenDoc4 ("D:\Documents and Settings\ivan\Bureau\barr  Fichiers SW\SINUSMATIC.SLDASM", 2, 0, "", longstatus)
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("SINUSMATIC.SLDASM")
+Part.EditRebuild
+boolstatus = Part.Extension.SelectByID("Ensemble arbre de sortie du reducteur-1@SINUSMATIC/Roulement a billes SKF 6000-1@Ensemble arbre de sortie du reducteur/Roulement a billes SKF 6005_inn_ring-1@Roulement a billes SKF 6000", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Ensemble arbre de sortie du reducteur-1@SINUSMATIC/Roulement a billes SKF 6000-1@Ensemble arbre de sortie du reducteur/Roulement a billes SKF 6005_inn_ring-1@Roulement a billes SKF 6000", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Ensemble arbre de sortie du reducteur-1@SINUSMATIC/Roulement a billes SKF 6000-1@Ensemble arbre de sortie du reducteur/Roulement a billes SKF 6005_inn_ring-1@Roulement a billes SKF 6000", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+Part.ClearSelection
+Part.Save2 FALSE
+Set Part = Nothing
+swApp.CloseDoc "SINUSMATIC.SLDASM"
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Ensemble fourche.SLDASM")
+swApp.LoadFile2 "D:\Documents and Settings\ivan\Bureau\barr  Fichiers SW\SINUSMATIC\Roulement a billes SKF 6005_balls.SLDPRT", ""
+Set Part = swApp.ActiveDoc
+Set Part = swApp.OpenDoc4 ("D:\Documents and Settings\ivan\Bureau\barr  Fichiers SW\SINUSMATIC\Roulement a billes SKF 6005_balls.SLDPRT", 1, 0, "", longstatus)
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Roulement a billes SKF 6005_balls.SLDPRT")
+Set Part = Nothing
+swApp.CloseDoc "Roulement a billes SKF 6005_balls.SLDPRT"
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Ensemble fourche.SLDASM")
+swApp.LoadFile2 "D:\Documents and Settings\ivan\Bureau\barr  Fichiers SW\SINUSMATIC\Roulement a billes SKF 6000.SLDASM", ""
+Set Part = swApp.ActiveDoc
+Set Part = swApp.OpenDoc4 ("D:\Documents and Settings\ivan\Bureau\barr  Fichiers SW\SINUSMATIC\Roulement a billes SKF 6000.SLDASM", 2, 0, "", longstatus)
+' MSGBOX
+' L'ID interne du document D:\Documents and Settings\ivan\Bureau\barr  Fichiers SW\SINUSMATIC\Roulement a billes SKF 6001_inn_ring.SLDPRT ne correspond pas à l'ID interne enregistré avec le document de référence.  Sélectionnez OUI pour accepter quand même ce document. Sélectionnez NON pour chercher avec Parcourir un modèle de remplacement.
+
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Roulement a billes SKF 6000.SLDASM")
+Part.Save2 FALSE
+Set Part = Nothing
+swApp.CloseDoc "Roulement a billes SKF 6000.SLDASM"
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Ensemble fourche.SLDASM")
+swApp.LoadFile2 "D:\Documents and Settings\ivan\Bureau\barr  Fichiers SW\SINUSMATIC.SLDASM", ""
+Set Part = swApp.ActiveDoc
+Set Part = swApp.OpenDoc4 ("D:\Documents and Settings\ivan\Bureau\barr  Fichiers SW\SINUSMATIC.SLDASM", 2, 0, "", longstatus)
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("SINUSMATIC.SLDASM")
+Part.Save2 FALSE
+Set Part = Nothing
+swApp.CloseDoc "SINUSMATIC.SLDASM"
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Ensemble fourche.SLDASM")
+boolstatus = Part.Extension.SelectByID("Lice-1@Ensemble fourche", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Lice-1@Ensemble fourche", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+Part.OpenCompFile
+swApp.LoadFile2 "D:\Documents and Settings\ivan\Bureau\barr  Fichiers SW\SINUSMATIC\Lice.SLDPRT", ""
+Set Part = swApp.ActiveDoc
+Set Part = swApp.OpenDoc4 ("D:\Documents and Settings\ivan\Bureau\barr  Fichiers SW\SINUSMATIC\Lice.SLDPRT", 1, 0, "", longstatus)
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Lice.SLDPRT")
+Part.ClearSelection
+' MSGBOX
+' D:\Documents and Settings\ivan\Bureau\barr  Fichiers SW\SINUSMATIC\Lice.SLDPRT est référencé par d'autres documents ouverts.  "Enregistrer sous" remplacera ces références avec le nouveau nom. Sélectionnez "Enregistrer copie sous" dans la boîte de dialogue "Enregistrer sous" si vous souhaitez garder les références existantes.
+
+Part.SaveAs2 "D:\Documents and Settings\ivan\Bureau\barr  Fichiers SW\SINUSMATIC\Lice contre poids.SLDPRT", 0, TRUE, FALSE
+Set Part = Nothing
+swApp.CloseDoc "Lice.SLDPRT"
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Ensemble fourche.SLDASM")
+swApp.LoadFile2 "D:\Documents and Settings\ivan\Bureau\barr  Fichiers SW\SINUSMATIC\Lice contre poids.SLDPRT", ""
+Set Part = swApp.ActiveDoc
+Set Part = swApp.OpenDoc4 ("D:\Documents and Settings\ivan\Bureau\barr  Fichiers SW\SINUSMATIC\Lice contre poids.SLDPRT", 1, 0, "", longstatus)
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Lice contre poids.SLDPRT")
+boolstatus = Part.Extension.SelectByID("Alésage", "BODYFEATURE", 0, 0, 0, False, 0, Nothing)
+Part.ViewZoomToSelection
+Part.ShowNamedView2 "*Face", 1
+Part.ViewZoomToSelection
+boolstatus = Part.Extension.SelectByID("", "FACE", -0.0004624775604081, 0.01402280075609, 0.05000000000001, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("", "FACE", 0.0009029323798444, 0.007966546988843, 0.0009999999999764, False, 0, Nothing)
+Part.ShowNamedView2 "*Isométrique", 7
+boolstatus = Part.Extension.SelectByID("Lice courte", "CONFIGURATIONS", 0, 0, 0, False, 0, Nothing)
+Part.ClearSelection
+Part.ShowConfiguration "Lice courte"
+Part.ShowNamedView2 "*Isométrique", 7
+Part.ShowNamedView2 "*Face", 1
+Part.ActiveView().RotateAboutCenter 0.0131421, 0.0160911
+Part.ActiveView().RotateAboutCenter 0, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.00657106, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0328553, 0.0241366
+Part.ActiveView().RotateAboutCenter -0.0197132, 0.0241366
+Part.ActiveView().RotateAboutCenter -0.0985659, 0.0965465
+Part.ActiveView().RotateAboutCenter -0.0262842, 0.0402277
+Part.ActiveView().RotateAboutCenter -0.0262842, 0.0241366
+Part.ActiveView().RotateAboutCenter -0.0131421, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0131421, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0197132, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0262842, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0131421, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0394264, 0.0321822
+Part.ActiveView().RotateAboutCenter -0.0328553, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0262842, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0459974, 0.0241366
+Part.ActiveView().RotateAboutCenter -0.0328553, 0
+Part.ActiveView().RotateAboutCenter -0.0525685, 0.0241366
+Part.ActiveView().RotateAboutCenter -0.0262842, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0328553, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0328553, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0262842, -0.00804554
+Part.ActiveView().RotateAboutCenter -0.0525685, -0.0321822
+Part.ActiveView().RotateAboutCenter -0.0394264, -0.0241366
+Part.ActiveView().RotateAboutCenter -0.0459974, -0.0482733
+Part.ActiveView().RotateAboutCenter -0.0459974, -0.0563188
+Part.ActiveView().RotateAboutCenter -0.0722817, -0.0804554
+Part.ActiveView().RotateAboutCenter -0.0328553, -0.0402277
+Part.ActiveView().RotateAboutCenter -0.0459974, -0.0402277
+Part.ActiveView().RotateAboutCenter -0.0459974, -0.0402277
+Part.ActiveView().RotateAboutCenter -0.0328553, -0.0160911
+Part.ActiveView().RotateAboutCenter -0.0328553, -0.0321822
+Part.ActiveView().RotateAboutCenter -0.0394264, -0.0321822
+Part.ActiveView().RotateAboutCenter -0.0131421, -0.00804554
+Part.ActiveView().RotateAboutCenter 0, -0.00804554
+Part.ActiveView().RotateAboutCenter -0.00657106, 0
+Part.ActiveView().RotateAboutCenter -0.00657106, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.00657106, 0
+Part.ActiveView().RotateAboutCenter -0.00657106, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0131421, 0.0241366
+Part.ActiveView().RotateAboutCenter 0, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.00657106, 0.0241366
+Part.ActiveView().RotateAboutCenter 0.00657106, 0
+Part.ActiveView().RotateAboutCenter 0.00657106, 0
+Part.ActiveView().RotateAboutCenter 0.00657106, 0
+Part.ActiveView().RotateAboutCenter 0.00657106, 0
+Part.ActiveView().RotateAboutCenter 0.0197132, -0.00804554
+Part.ActiveView().RotateAboutCenter 0.0262842, 0
+Part.ActiveView().RotateAboutCenter 0.0262842, -0.0160911
+Part.ActiveView().RotateAboutCenter 0.0131421, 0
+Set Part = Nothing
+swApp.CloseDoc "Lice contre poids.SLDPRT"
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Ensemble fourche.SLDASM")
+swApp.LoadFile2 "D:\Documents and Settings\ivan\Bureau\barr  Fichiers SW\SINUSMATIC\Noyau.SLDPRT", ""
+Set Part = swApp.ActiveDoc
+Set Part = swApp.OpenDoc4 ("D:\Documents and Settings\ivan\Bureau\barr  Fichiers SW\SINUSMATIC\Noyau.SLDPRT", 1, 0, "", longstatus)
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Noyau.SLDPRT")
+boolstatus = Part.Extension.SelectByID("", "FACE", 0.0007862108754466, 0.02487674782219, 0.01536267886831, False, 0, Nothing)
+Part.ActiveView().RotateAboutCenter 0.0131815, 0.0241366
+Part.ActiveView().RotateAboutCenter 0, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0131815, 0.0241366
+Part.ActiveView().RotateAboutCenter -0.079089, 0.088501
+Part.ActiveView().RotateAboutCenter -0.0988613, 0.104592
+Part.ActiveView().RotateAboutCenter -0.105452, 0.128729
+Part.ActiveView().RotateAboutCenter -0.105452, 0.177002
+Part.ActiveView().RotateAboutCenter -0.0724983, 0.168956
+Part.ActiveView().RotateAboutCenter -0.0329538, 0.0563188
+Part.ActiveView().RotateAboutCenter -0.0395445, 0.0643643
+Part.ActiveView().RotateAboutCenter -0.026363, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0329538, 0.0482733
+Part.ActiveView().RotateAboutCenter -0.0329538, 0.0321822
+Part.ActiveView().RotateAboutCenter -0.0461353, 0.0241366
+Part.ActiveView().RotateAboutCenter -0.0461353, 0.0402277
+Part.ActiveView().RotateAboutCenter -0.0395445, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.052726, 0.0321822
+Part.ActiveView().RotateAboutCenter -0.0329538, 0.0241366
+Part.ActiveView().RotateAboutCenter -0.0659075, 0.0321822
+Part.ActiveView().RotateAboutCenter -0.026363, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0197723, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0461353, 0.0241366
+Part.ActiveView().RotateAboutCenter -0.0329538, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0461353, 0.0321822
+Part.ActiveView().RotateAboutCenter -0.0395445, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0395445, 0.0241366
+Part.ActiveView().RotateAboutCenter -0.052726, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.079089, 0.0241366
+Part.ActiveView().RotateAboutCenter -0.0395445, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.052726, 0
+Part.ActiveView().RotateAboutCenter -0.0724983, 0
+Part.ActiveView().RotateAboutCenter -0.0395445, 0
+Part.ActiveView().RotateAboutCenter -0.0593168, -0.0160911
+Part.ActiveView().RotateAboutCenter -0.0197723, -0.0160911
+Part.ActiveView().RotateAboutCenter -0.026363, -0.0160911
+Part.ActiveView().RotateAboutCenter -0.0131815, -0.0241366
+Part.ActiveView().RotateAboutCenter -0.0131815, -0.0402277
+Part.ActiveView().RotateAboutCenter -0.0197723, -0.104592
+Part.ActiveView().RotateAboutCenter -0.026363, -0.088501
+Part.ActiveView().RotateAboutCenter -0.00659075, -0.14482
+Part.ActiveView().RotateAboutCenter 0, -0.0804554
+Part.ActiveView().RotateAboutCenter 0.00659075, -0.0965465
+Part.ActiveView().RotateAboutCenter 0, -0.0160911
+Part.ActiveView().RotateAboutCenter 0, -0.00804554
+Part.ActiveView().RotateAboutCenter -0.0131815, -0.0804554
+Part.ActiveView().RotateAboutCenter -0.0197723, -0.088501
+Part.ActiveView().RotateAboutCenter -0.0197723, -0.112638
+Part.ActiveView().RotateAboutCenter 0, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.00659075, 0
+Part.ActiveView().RotateAboutCenter -0.0131815, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0197723, 0
+Part.ActiveView().RotateAboutCenter -0.00659075, 0
+Part.ActiveView().RotateAboutCenter 0, -0.00804554
+Part.ActiveView().RotateAboutCenter -0.00659075, -0.0402277
+Part.ActiveView().RotateAboutCenter 0, -0.160911
+Part.ActiveView().RotateAboutCenter 0, -0.0563188
+Part.ActiveView().RotateAboutCenter 0.00659075, -0.00804554
+Part.ActiveView().RotateAboutCenter 0, 0.00804554
+Part.ActiveView().RotateAboutCenter 0.00659075, 0.0241366
+Part.ActiveView().RotateAboutCenter 0.0131815, 0.0643643
+Part.ActiveView().RotateAboutCenter 0.0131815, 0.128729
+Part.ActiveView().RotateAboutCenter 0.0329538, 0.128729
+Part.ActiveView().RotateAboutCenter 0.026363, 0.128729
+Part.ActiveView().RotateAboutCenter 0.0197723, 0.0804554
+Part.ActiveView().RotateAboutCenter 0.00659075, 0.0402277
+Part.ActiveView().RotateAboutCenter 0.00659075, 0.00804554
+Part.DeSelectByID "", "FACE", 0.0007862108754466, 0.02487674782219, 0.01536267886831
+boolstatus = Part.Extension.SelectByID("", "FACE", -0.01289409062787, 0.001000000000033, 0.03773280240006, True, 0, Nothing)
+Part.ActiveView().RotateAboutCenter 0.0329538, 0.0160911
+Part.ActiveView().RotateAboutCenter 0.026363, 0
+Part.ActiveView().RotateAboutCenter 0.0131815, 0
+Part.ActiveView().RotateAboutCenter 0.026363, 0
+Part.ActiveView().RotateAboutCenter 0.0197723, -0.00804554
+Part.ActiveView().RotateAboutCenter 0.0329538, -0.0160911
+Part.ActiveView().RotateAboutCenter 0.0329538, -0.00804554
+Part.ActiveView().RotateAboutCenter 0.0461353, -0.0160911
+Part.ActiveView().RotateAboutCenter 0.026363, -0.00804554
+Part.ActiveView().RotateAboutCenter 0.0329538, -0.0160911
+Part.ActiveView().RotateAboutCenter 0.0131815, 0
+Part.ActiveView().RotateAboutCenter 0.0329538, -0.00804554
+Part.ActiveView().RotateAboutCenter 0.0461353, 0
+Part.ActiveView().RotateAboutCenter 0.0329538, 0
+Part.ActiveView().RotateAboutCenter 0.0856798, 0
+Part.ActiveView().RotateAboutCenter 0.079089, 0.0160911
+Part.ActiveView().RotateAboutCenter 0.138406, 0.0160911
+Part.ActiveView().RotateAboutCenter 0.0593168, 0.00804554
+Part.ActiveView().RotateAboutCenter 0.0593168, 0.0160911
+Part.ActiveView().RotateAboutCenter 0.026363, 0
+Part.ActiveView().RotateAboutCenter 0.00659075, -0.00804554
+Part.ActiveView().RotateAboutCenter 0.00659075, 0
+Part.ActiveView().RotateAboutCenter 0.00659075, -0.00804554
+Part.ShowNamedView2 "*Face", 1
+Part.CreatePlaneAtOffset3  0.015, True, True
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Plan4", "PLANE", 0, 0, 0, False, 0, Nothing)
+Part.InsertSketch2 True
+Part.ClearSelection
+Part.SketchRectangle -0.017, 0.022, 0, 0.019, 0.005, 0, 1
+Part.ClearSelection
+Part.CreateLine2( 0, 0.035, 0, 0, -0.003, 0 ).ConstructionGeometry = TRUE
+Part.SetPickMode
+Part.ClearSelection
+Part.SetPickMode
+boolstatus = Part.Extension.SelectByID("Line4", "SKETCHSEGMENT", 0.01947099818, 0.0009999999999764, 0.01920398334998, False, 0, Nothing)
+Part.EditDelete
+boolstatus = Part.Extension.SelectByID("Line1", "SKETCHSEGMENT", 0.01639449950707, 0.0009999999999764, 0.02163279809176, False, 0, Nothing)
+Part.EditDelete
+boolstatus = Part.Extension.SelectByID("", "FACE", 0.01194167248046, 0.0009999999999764, 0.005521660304569, False, 0, Nothing)
+Part.EditDelete
+' MSGBOX
+' Les entités qui n'appartiennent pas à l'esquisse active ne peuvent pas être supprimées.
+
+boolstatus = Part.Extension.SelectByID("Line3", "SKETCHSEGMENT", 0.006112517100167, 0.00791436255804, 0.005116857847605, False, 0, Nothing)
+Part.EditDelete
+boolstatus = Part.Extension.SelectByID("Line2", "SKETCHSEGMENT", -0.01712314392961, 0.0009999999999764, 0.01653228713401, False, 0, Nothing)
+Part.EditDelete
+boolstatus = Part.Extension.SelectByID("Line5", "SKETCHSEGMENT", -4.048024569647e-005, 0.009999918067138, 0.02309008693684, False, 0, Nothing)
+Part.SketchMirror
+Part.ClearSelection
+Part.CreateLine2 0, 0.021, 0, -0.013, 0.021, 0
+Part.CreateLine2 -0.013, 0.021, 0, -0.013, 0.009, 0
+Part.CreateLine2 -0.013, 0.009, 0, 0, 0.009, 0
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Line8", "SKETCHSEGMENT", -0.01299415886857, 0.01295385105386, 0.01734189204794, False, 0, Nothing)
+Set Annotation = Part.AddDimension2(-0.017366, 0.016, 0.015075)
+Part.ClearSelection
+Part.Parameter("D1@Esquisse1").SystemValue = 0.012
+boolstatus = Part.Extension.SelectByID("Line6", "SKETCHSEGMENT", -0.007003082505489, 0.01295385105386, 0.02106607465201, False, 0, Nothing)
+Set Annotation = Part.AddDimension2(-0.00586964, 0.016, 0.0268143)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("D1@Esquisse1@Noyau.SLDPRT", "DIMENSION", 0, 0, 0, False, 0, Nothing)
+Part.Parameter("D2@Esquisse1").SystemValue = 0.03
+boolstatus = Part.Extension.SelectByID("", "EDGE", 0.000607203685447, 0.0009999999999764, 0.001230754260744, True, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Line5", "SKETCHSEGMENT", 0.002145453021913, 0.01295385105386, 0.002607082614424, True, 0, Nothing)
+Part.SetPickMode
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Plan3", "PLANE", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Line5", "SKETCHSEGMENT", 0.001902571547734, 0.01295385105386, 0.02406161283355, True, 0, Nothing)
+Part.SketchAddConstraints "sgCOLINEAR"
+Part.ClearSelection
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Ensemble fourche.SLDASM")
+boolstatus = Part.Extension.SelectByID("Lice-1@Ensemble fourche", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+Part.OpenCompFile
+swApp.LoadFile2 "D:\Documents and Settings\ivan\Bureau\barr  Fichiers SW\SINUSMATIC\Lice.SLDPRT", ""
+Set Part = swApp.ActiveDoc
+Set Part = swApp.OpenDoc4 ("D:\Documents and Settings\ivan\Bureau\barr  Fichiers SW\SINUSMATIC\Lice.SLDPRT", 1, 0, "", longstatus)
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Lice.SLDPRT")
+Part.ClearSelection
+Part.ShowNamedView2 "*Face", 1
+Part.ShowNamedView2 "*Dessus", 5
+boolstatus = Part.Extension.SelectByID("", "EDGE", -0.006015237296428, 2, 0.01035669725856, True, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("", "EDGE", 0.001542368537546, 0.0009999999999764, -0.00159665890741, True, 0, Nothing)
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Noyau.SLDPRT")
+boolstatus = Part.Extension.SelectByID("Line10", "SKETCHSEGMENT", 0.004088504815343, 0.01295385105386, 0.008922000943072, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("", "EDGE", 0.004736188746487, 0.0009999999999764, -0.001198060481044, True, 0, Nothing)
+Set Annotation = Part.AddDimension2(0.0210092, 0.016, 0.00293092)
+Part.ClearSelection
+Part.Parameter("D3@Esquisse1").SystemValue = 0.012
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Lice.SLDPRT")
+Part.DeSelectByID "", "EDGE", -0.006015237296428, 2, 0.01035669725856
+Part.DeSelectByID "", "EDGE", 0.001542368537546, 0.0009999999999764, -0.00159665890741
+boolstatus = Part.Extension.SelectByID("", "EDGE", -0.01496097481419, 2, 0.01405838174867, True, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Inconnu", "POINTREF", 0.015, 2, 0.0145, True, 0, Nothing)
+Part.DeSelectByID "", "EDGE", -0.01496097481419, 2, 0.01405838174867
+Part.DeSelectByID "Inconnu", "POINTREF", 0.015, 2, 0.0145
+boolstatus = Part.Extension.SelectByID("", "EDGE", -0.01071946133594, 2, 0.01051093411231, True, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("", "EDGE", -0.009177092798397, 2, 0.01829989522692, True, 0, Nothing)
+Part.SetPickMode
+Part.ClearSelection
+Part.SetPickMode
+Part.SetPickMode
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Noyau.SLDPRT")
+boolstatus = Part.Extension.SelectByID("D1@Esquisse1@Noyau.SLDPRT", "DIMENSION", -0.02133308948204, 0.01295385105386, 0.01798957597908, False, 0, Nothing)
+Part.Parameter("D1@Esquisse1").SystemValue = 0.016
+boolstatus = Part.Extension.SelectByID("D3@Esquisse1@Noyau.SLDPRT", "DIMENSION", 0.01623257852428, 0.01295385105386, 0.003983410968103, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("D3@Esquisse1@Noyau.SLDPRT", "DIMENSION", 0.01679930196403, 0.01295385105386, 0.003983410968103, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("D3@Esquisse1@Noyau.SLDPRT", "DIMENSION", 0.01736602540378, 0.01295385105386, 0.003983410968103, False, 0, Nothing)
+Part.Parameter("D3@Esquisse1").SystemValue = 0.008
+Part.ClearSelection
+Part.ShowNamedView2 "*Isométrique", 7
+Part.ClearSelection 
+Part.FeatureManager.FeatureExtrusion True, False, True, 0, 0, 0.07, 0.01, False, False, False, False, 0.01745329251994, 0.01745329251994, False, False, False, False, 1, 1, 1
+Part.SelectionManager.EnableContourSelection = 0
+boolstatus = Part.Extension.SelectByID("Extrusion1", "BODYFEATURE", 0, 0, 0, False, 0, Nothing)
+Part.SelectedFeatureProperties 8421440, 1, 1, 0.3, 0.3125, 0, 0, 0, 0, ""
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Plan4", "PLANE", 0, 0, 0, False, 0, Nothing)
+Part.BlankRefGeom
+Part.Save2 FALSE
+swApp.ArrangeWindows 1
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 0
+swApp.ActiveDoc.ActiveView.FrameWidth = 1218
+swApp.ActiveDoc.ActiveView.FrameHeight = 278
+boolstatus = Part.Extension.SelectByID("Noyau.SLDPRT", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+Set Part = swApp.ActivateDoc ("Ensemble fourche.SLDASM")
+Part.EditRebuild
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 556
+swApp.ActiveDoc.ActiveView.FrameState = 1
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Part.ActiveView().RotateAboutCenter 0, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.129226, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0476097, 0
+Part.ActiveView().RotateAboutCenter -0.0136028, 0
+Part.ActiveView().RotateAboutCenter -0.0136028, 0
+Part.ActiveView().RotateAboutCenter -0.0272055, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0272055, 0
+Part.ActiveView().RotateAboutCenter -0.0204042, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.00680139, 0
+Part.ActiveView().RotateAboutCenter 0.00680139, 0
+Part.ActiveView().RotateAboutCenter 0.0272055, 0.00804554
+Part.ActiveView().RotateAboutCenter 0.0612125, 0
+Part.ActiveView().RotateAboutCenter 0.0476097, 0
+Part.ActiveView().RotateAboutCenter 0.088418, 0
+Part.ActiveView().RotateAboutCenter 0.115624, -0.0160911
+Part.ActiveView().RotateAboutCenter 0.0272055, 0
+Part.ActiveView().RotateAboutCenter 0.00680139, 0
+Part.ActiveView().RotateAboutCenter 0.0340069, -0.0241366
+Part.ActiveView().RotateAboutCenter 0.0204042, 0
+Part.ActiveView().RotateAboutCenter 0, -0.00804554
+Part.ActiveView().RotateAboutCenter -0.0272055, -0.00804554
+Part.ActiveView().RotateAboutCenter -0.0136028, 0
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0204042, 0.0402277
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.0321822
+Part.ActiveView().RotateAboutCenter 0, 0.00804554
+Part.ActiveView().RotateAboutCenter 0.0204042, 0
+Part.ActiveView().RotateAboutCenter 0.0136028, 0
+Part.ActiveView().RotateAboutCenter 0.00680139, 0
+Part.ActiveView().RotateAboutCenter 0.00680139, 0
+Part.ActiveView().RotateAboutCenter 0, -0.0160911
+Part.ActiveView().RotateAboutCenter 0.00680139, 0
+Part.ActiveView().RotateAboutCenter 0.0544111, -0.0321822
+Part.ActiveView().RotateAboutCenter 0.0272055, 0
+Part.ActiveView().RotateAboutCenter 0, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0408083, 0.0482733
+Part.ActiveView().RotateAboutCenter -0.0544111, 0.0643643
+Part.ActiveView().RotateAboutCenter -0.0476097, 0.0482733
+Part.ActiveView().RotateAboutCenter -0.088418, 0.0965465
+Part.ActiveView().RotateAboutCenter -0.0612125, 0.0643643
+Part.ActiveView().RotateAboutCenter -0.0340069, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0204042, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.00680139, 0
+Part.ActiveView().RotateAboutCenter 0.00680139, 0
+Part.ActiveView().RotateAboutCenter 0.0272055, 0
+Part.ActiveView().RotateAboutCenter 0.0340069, 0
+Part.ActiveView().RotateAboutCenter 0.0204042, 0
+Part.ActiveView().RotateAboutCenter 0.00680139, 0
+Part.ActiveView().RotateAboutCenter 0.00680139, 0
+Part.ActiveView().RotateAboutCenter 0.00680139, -0.00804554
+Part.ActiveView().RotateAboutCenter 0.00680139, 0
+Part.ActiveView().RotateAboutCenter 0, -0.00804554
+Part.ActiveView().RotateAboutCenter 0.00680139, 0
+Part.ActiveView().RotateAboutCenter 0.00680139, -0.00804554
+Part.ActiveView().RotateAboutCenter 0.00680139, -0.0241366
+Part.ActiveView().RotateAboutCenter 0, -0.00804554
+Part.ActiveView().RotateAboutCenter 0.00680139, -0.00804554
+Part.ActiveView().RotateAboutCenter 0.00680139, 0
+Part.ActiveView().RotateAboutCenter 0.0136028, -0.0160911
+Part.ActiveView().RotateAboutCenter 0.0272055, -0.0160911
+Part.ActiveView().RotateAboutCenter 0.0136028, -0.0241366
+Part.ActiveView().RotateAboutCenter 0.00680139, 0
+Part.ActiveView().RotateAboutCenter 0.00680139, -0.0160911
+boolstatus = Part.Extension.SelectByID("", "FACE", -0.01295073587931, 0.01460249545033, 0.00100000000009, True, 0, Nothing)
+Part.ActiveView().RotateAboutCenter -0.00680139, 0
+Part.ActiveView().RotateAboutCenter -0.0272055, 0
+Part.ActiveView().RotateAboutCenter -0.0340069, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0204042, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0136028, 0
+Part.ActiveView().RotateAboutCenter -0.0204042, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0204042, 0
+Part.ActiveView().RotateAboutCenter -0.0272055, 0.0241366
+Part.ActiveView().RotateAboutCenter -0.0204042, 0
+Part.ActiveView().RotateAboutCenter -0.0340069, 0.0241366
+Part.ActiveView().RotateAboutCenter -0.00680139, 0
+Part.ActiveView().RotateAboutCenter -0.00680139, 0
+Part.ActiveView().RotateAboutCenter -0.0136028, 0
+Part.ActiveView().RotateAboutCenter -0.0272055, 0
+Part.ActiveView().RotateAboutCenter -0.0136028, 0
+Part.ActiveView().RotateAboutCenter -0.0136028, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0272055, 0
+Part.ActiveView().RotateAboutCenter -0.0136028, 0
+Part.ActiveView().RotateAboutCenter -0.0408083, 0
+Part.ActiveView().RotateAboutCenter -0.0136028, 0
+Part.ActiveView().RotateAboutCenter -0.0204042, 0
+Part.ActiveView().RotateAboutCenter -0.00680139, 0
+Part.ActiveView().RotateAboutCenter -0.0204042, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.00680139, 0
+Part.ActiveView().RotateAboutCenter -0.0204042, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0136028, 0
+Part.ActiveView().RotateAboutCenter -0.0272055, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0136028, 0
+Part.ActiveView().RotateAboutCenter -0.0136028, 0
+Part.ActiveView().RotateAboutCenter -0.0204042, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0272055, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0136028, 0
+Part.ActiveView().RotateAboutCenter -0.0204042, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.00680139, 0
+Part.ActiveView().RotateAboutCenter -0.00680139, 0
+Part.ActiveView().RotateAboutCenter -0.0136028, 0
+Part.ActiveView().RotateAboutCenter -0.0544111, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0680139, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.136028, 0.0804554
+Part.ActiveView().RotateAboutCenter -0.142829, 0.128729
+Part.ActiveView().RotateAboutCenter -0.0816166, 0.112638
+Part.ActiveView().RotateAboutCenter -0.14963, 0.201139
+Part.ActiveView().RotateAboutCenter -0.0204042, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0340069, 0.0241366
+Part.ActiveView().RotateAboutCenter -0.0136028, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0204042, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0272055, 0.0241366
+Part.ActiveView().RotateAboutCenter -0.0272055, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0272055, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0408083, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0272055, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0204042, 0
+Part.ActiveView().RotateAboutCenter -0.0340069, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0544111, 0
+Part.ActiveView().RotateAboutCenter -0.0340069, -0.0160911
+Part.ActiveView().RotateAboutCenter -0.0476097, -0.0160911
+Part.ActiveView().RotateAboutCenter -0.0680139, -0.0563188
+Part.ActiveView().RotateAboutCenter -0.0544111, -0.0482733
+Part.ActiveView().RotateAboutCenter -0.0340069, -0.0402277
+Part.ActiveView().RotateAboutCenter -0.0476097, -0.0321822
+Part.ActiveView().RotateAboutCenter -0.0272055, -0.0160911
+Part.ActiveView().RotateAboutCenter -0.0136028, -0.0160911
+Part.ActiveView().RotateAboutCenter -0.0204042, 0
+Part.ActiveView().RotateAboutCenter -0.0272055, -0.00804554
+Part.ActiveView().RotateAboutCenter -0.0204042, 0
+Part.ActiveView().RotateAboutCenter -0.0204042, 0
+Part.ActiveView().RotateAboutCenter -0.0408083, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0340069, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0476097, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0272055, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0340069, 0.0241366
+Part.ActiveView().RotateAboutCenter -0.0272055, 0.0321822
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0272055, 0.0482733
+Part.ActiveView().RotateAboutCenter -0.0136028, 0.0321822
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.0241366
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.0321822
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.00804554
+Part.ActiveView().RotateAboutCenter 0, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.0241366
+Part.ActiveView().RotateAboutCenter -0.0136028, 0.0402277
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.0804554
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.0643643
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.0321822
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.00804554
+Part.ActiveView().RotateAboutCenter 0.00680139, 0
+Part.ActiveView().RotateAboutCenter 0.0340069, 0
+Part.ActiveView().RotateAboutCenter 0.0272055, 0
+Part.ActiveView().RotateAboutCenter 0.0340069, -0.00804554
+Part.ActiveView().RotateAboutCenter 0.0136028, -0.00804554
+Part.ActiveView().RotateAboutCenter 0.00680139, 0
+Part.ActiveView().RotateAboutCenter 0.0136028, -0.00804554
+Part.ActiveView().RotateAboutCenter 0.0136028, -0.0321822
+Part.ActiveView().RotateAboutCenter 0.0340069, -0.088501
+Part.ActiveView().RotateAboutCenter 0.0204042, -0.14482
+Part.ActiveView().RotateAboutCenter 0, -0.0804554
+Part.ActiveView().RotateAboutCenter 0, -0.0482733
+Part.ActiveView().RotateAboutCenter 0, -0.0804554
+Part.ActiveView().RotateAboutCenter 0.00680139, -0.0643643
+Part.ActiveView().RotateAboutCenter 0.00680139, -0.0241366
+Part.ActiveView().RotateAboutCenter 0.00680139, 0
+Part.ActiveView().RotateAboutCenter 0.0136028, 0
+Part.ActiveView().RotateAboutCenter 0.0272055, 0.0241366
+Part.ActiveView().RotateAboutCenter 0.0272055, 0.0563188
+Part.ActiveView().RotateAboutCenter 0.0612125, 0.209184
+Part.ActiveView().RotateAboutCenter 0.00680139, 0.160911
+Part.ActiveView().RotateAboutCenter 0.0204042, 0.329867
+Part.ActiveView().RotateAboutCenter 0, 0.0643643
+Part.ActiveView().RotateAboutCenter 0, 0.0160911
+Part.ActiveView().RotateAboutCenter 0, 0.00804554
+Part.ShowNamedView2 "*Isométrique", 7
+Part.ActiveView().RotateAboutCenter -0.00680139, 0
+Part.ActiveView().RotateAboutCenter -0.115624, -0.0160911
+Part.ActiveView().RotateAboutCenter -0.136028, -0.0402277
+Part.ActiveView().RotateAboutCenter -0.0544111, 0
+Part.ActiveView().RotateAboutCenter -0.0408083, -0.00804554
+Part.ActiveView().RotateAboutCenter -0.0340069, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0408083, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0272055, 0
+Part.ActiveView().RotateAboutCenter -0.0272055, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0476097, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0272055, 0.0241366
+Part.ActiveView().RotateAboutCenter -0.0476097, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0748152, 0.0321822
+Part.ActiveView().RotateAboutCenter -0.0748152, 0.0241366
+Part.ActiveView().RotateAboutCenter -0.0680139, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.088418, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0476097, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0408083, 0
+Part.ActiveView().RotateAboutCenter -0.0272055, 0
+Part.ActiveView().RotateAboutCenter -0.0340069, 0
+Part.ActiveView().RotateAboutCenter -0.0612125, 0
+Part.ActiveView().RotateAboutCenter -0.0748152, -0.0160911
+Part.ActiveView().RotateAboutCenter -0.0612125, -0.0241366
+Part.ActiveView().RotateAboutCenter -0.0272055, -0.00804554
+Part.ActiveView().RotateAboutCenter -0.0272055, -0.00804554
+Part.ActiveView().RotateAboutCenter -0.0204042, -0.00804554
+Part.ActiveView().RotateAboutCenter -0.00680139, 0
+Part.ActiveView().RotateAboutCenter -0.00680139, 0
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.183637, 0.0804554
+Part.ActiveView().RotateAboutCenter -0.312864, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.374076, -0.0160911
+Part.ActiveView().RotateAboutCenter -0.108822, -0.0160911
+Part.ViewZoomTo2 -1.35893, -0.922708, 0.250792, -1.00694, -1.14744, 0.250792
+boolstatus = Part.Extension.SelectByID("", "FACE", -0.9276706968902, -0.6988556796506, 0.7234096152178, True, 0, Nothing)
+Part.AddMate 0, 2, False, 1.300217298224, 1.570796326795
+Part.ClearSelection
+Part.ShowNamedView2 "*Isométrique", 7
+Part.ShowNamedView2 "*Face", 1
+Part.ShowNamedView2 "*Droite", 4
+Part.ClearSelection
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Coïncidente18", "MATE", 0, 0, 0, False, 0, Nothing)
+Part.EditDelete
+Part.SmartMateComponent
+Part.TranslateComponent
+boolstatus = Part.Extension.SelectByID("", "VERTEX", -0.9112513826645, -0.6893556796507, -0.009258819045103, False, 0, Nothing)
+Part.ActiveView().RotateAboutCenter 0.00680139, 0
+Part.ActiveView().RotateAboutCenter 0.00680139, -0.0160911
+Part.ActiveView().RotateAboutCenter 0, -0.00804554
+Part.ActiveView().RotateAboutCenter 0.00680139, 0
+Part.ActiveView().RotateAboutCenter 0.00680139, -0.00804554
+Part.ActiveView().RotateAboutCenter 0.00680139, -0.00804554
+Part.ActiveView().RotateAboutCenter 0, -0.00804554
+Part.ActiveView().RotateAboutCenter 0.0136028, -0.0241366
+Part.ActiveView().RotateAboutCenter 0.00680139, -0.0402277
+Part.ActiveView().RotateAboutCenter 0, -0.0563188
+Part.ActiveView().RotateAboutCenter 0.00680139, -0.0643643
+Part.ActiveView().RotateAboutCenter 0.00680139, -0.0482733
+Part.ActiveView().RotateAboutCenter 0.0136028, -0.0643643
+Part.ActiveView().RotateAboutCenter 0.00680139, -0.0402277
+Part.ActiveView().RotateAboutCenter 0.00680139, -0.0482733
+Part.ActiveView().RotateAboutCenter 0.00680139, -0.112638
+Part.ActiveView().RotateAboutCenter 0, -0.0643643
+Part.ActiveView().RotateAboutCenter 0.00680139, -0.0643643
+Part.ActiveView().RotateAboutCenter 0.00680139, -0.088501
+Part.ActiveView().RotateAboutCenter 0.00680139, -0.0241366
+Part.ActiveView().RotateAboutCenter 0, -0.00804554
+Part.ActiveView().RotateAboutCenter 0, -0.00804554
+Part.ViewZoomTo2 -0.802834, 0.0635885, -0.48302, -0.313464, -0.299261, -0.48302
+boolstatus = Part.Extension.SelectByID("", "FACE", -0.005479388266792, -0.01403190179414, -0.009953028979282, True, 0, Nothing)
+Part.DeSelectByID "", "FACE", -0.005479388266792, -0.01403190179414, -0.009953028979282
+boolstatus = Part.Extension.SelectByID("", "FACE", -0.02219468908862, -0.01542927013709, -0.009990782109014, True, 0, Nothing)
+Part.DeSelectByID "", "VERTEX", -0.9112513826645, -0.6893556796507, -0.009258819045103
+Part.ShowNamedView2 "*Isométrique", 7
+Part.ViewZoomTo2 -0.784403, 0.469482, 0.25387, -0.387235, 0.273207, 0.25387
+boolstatus = Part.Extension.SelectByID("", "FACE", -0.947379321057, -0.01308748475594, -0.04768251764199, True, 0, Nothing)
+Part.AddMate 1, 2, False, 0.8942741240365, 0.5235987755983
+Part.ClearSelection
+Part.ShowNamedView2 "*Isométrique", 7
+Part.ClearSelection 
+boolstatus = Part.Extension.SelectByID("", "FACE", -0.01415410013297, -0.007928932188134, 0.007071067811865, False, 8, Nothing)
+boolstatus = Part.Extension.SelectByID("", "FACE", -0.9187345911936, -0.015, -0.01, True, 8, Nothing)
+boolstatus = Part.Extension.SelectByID("Coaxiale1", "MATE", 0, 0, 0, True, 0, Nothing)
+Part.EditMate 1, 0, False, 0.01, 0.5235987755983
+Part.ClearSelection
+Part.ClearSelection
+Part.ActiveView().RotateAboutCenter 0.00680139, 0
+Part.ActiveView().RotateAboutCenter 0.0952194, -0.201139
+Part.ActiveView().RotateAboutCenter 0.0612125, -0.185047
+Part.ActiveView().RotateAboutCenter 0.0544111, -0.168956
+Part.ActiveView().RotateAboutCenter 0.0272055, -0.120683
+Part.ActiveView().RotateAboutCenter 0.0272055, -0.0965465
+Part.ActiveView().RotateAboutCenter 0.0136028, -0.104592
+Part.ActiveView().RotateAboutCenter 0.00680139, -0.0965465
+Part.ActiveView().RotateAboutCenter 0.00680139, -0.0402277
+Part.ActiveView().RotateAboutCenter 0.0136028, -0.128729
+Part.ActiveView().RotateAboutCenter 0.00680139, -0.088501
+Part.ActiveView().RotateAboutCenter 0, -0.0321822
+Part.ActiveView().RotateAboutCenter 0.00680139, -0.0160911
+Part.ActiveView().RotateAboutCenter 0.00680139, -0.0482733
+Part.ActiveView().RotateAboutCenter 0.0204042, -0.0804554
+Part.ActiveView().RotateAboutCenter 0.00680139, -0.0965465
+Part.ActiveView().RotateAboutCenter 0.00680139, -0.0804554
+Part.ActiveView().RotateAboutCenter 0, -0.0241366
+Part.ActiveView().RotateAboutCenter 0, -0.0160911
+Part.ActiveView().RotateAboutCenter 0.00680139, -0.0402277
+Part.ActiveView().RotateAboutCenter 0.00680139, -0.0321822
+Part.ActiveView().RotateAboutCenter 0.00680139, 0
+Part.ViewZoomTo2 -0.951166, -0.0319138, 0.274328, -0.766252, -0.189767, 0.274328
+boolstatus = Part.Extension.SelectByID("", "FACE", -0.02284192733742, 0.003131088586485, 0.001000000000033, True, 0, Nothing)
+Part.ViewOrientationUndo
+Part.ViewOrientationUndo
+Part.ViewOrientationUndo
+Part.ActiveView().RotateAboutCenter 0.00680139, 0.00804554
+Part.ActiveView().RotateAboutCenter 0, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.0724099
+Part.ActiveView().RotateAboutCenter -0.0204042, 0.0643643
+Part.ActiveView().RotateAboutCenter -0.0204042, 0.0804554
+Part.ActiveView().RotateAboutCenter -0.0204042, 0.0321822
+Part.ActiveView().RotateAboutCenter -0.0136028, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0136028, 0
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0204042, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0136028, 0
+Part.ActiveView().RotateAboutCenter -0.0136028, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.00680139, 0
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.00680139, 0
+Part.ActiveView().RotateAboutCenter -0.00680139, 0
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0272055, 0.0241366
+Part.ActiveView().RotateAboutCenter -0.0272055, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0204042, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0476097, 0.0241366
+Part.ActiveView().RotateAboutCenter -0.0340069, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0544111, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0612125, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0340069, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0408083, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0544111, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0408083, 0
+Part.ActiveView().RotateAboutCenter -0.0136028, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.00680139, 0
+Part.ActiveView().RotateAboutCenter -0.0136028, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0136028, 0.0241366
+Part.ActiveView().RotateAboutCenter -0.0136028, 0.0321822
+Part.ActiveView().RotateAboutCenter -0.0272055, 0.0804554
+Part.ActiveView().RotateAboutCenter -0.0204042, 0.0563188
+Part.ActiveView().RotateAboutCenter -0.0136028, 0.0563188
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.0402277
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.0160911
+Part.ViewZoomtofit2
+Part.ActiveView().RotateAboutCenter -0.0136028, 0
+Part.ActiveView().RotateAboutCenter -0.0748152, 0.0402277
+Part.ActiveView().RotateAboutCenter -0.0748152, 0.0563188
+Part.ActiveView().RotateAboutCenter -0.0612125, 0.0482733
+Part.ActiveView().RotateAboutCenter -0.0612125, 0.0482733
+Part.ActiveView().RotateAboutCenter -0.0476097, 0.0321822
+Part.ActiveView().RotateAboutCenter -0.0272055, 0.0241366
+Part.ActiveView().RotateAboutCenter -0.0272055, 0.0241366
+Part.ActiveView().RotateAboutCenter -0.0204042, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.00680139, 0
+Part.ActiveView().RotateAboutCenter -0.00680139, 0
+Part.ActiveView().RotateAboutCenter -0.00680139, 0
+Part.ActiveView().RotateAboutCenter 0, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.00680139, 0
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0272055, 0.0402277
+Part.ActiveView().RotateAboutCenter -0.0136028, 0.0321822
+Part.ActiveView().RotateAboutCenter -0.0204042, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0136028, 0.0321822
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0136028, 0
+Part.ActiveView().RotateAboutCenter 0, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.00680139, 0
+Part.ActiveView().RotateAboutCenter -0.0136028, 0
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0204042, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0204042, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0272055, 0
+Part.ActiveView().RotateAboutCenter -0.0136028, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0204042, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0272055, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0204042, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0136028, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0136028, 0
+Part.ActiveView().RotateAboutCenter 0, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.00680139, 0
+Part.ViewRotateplusx
+Part.ViewRotateplusx
+Part.ViewRotateplusx
+Part.ViewRotateplusx
+Part.ActiveView().TranslateBy -0.00144021, -0.00288041
+Part.ActiveView().TranslateBy -0.00230433, -0.00777711
+Part.ActiveView().TranslateBy 0.000288041, -0.00201629
+Part.ActiveView().TranslateBy 0.00172825, -0.00259237
+Part.ActiveView().TranslateBy 0.0048967, -0.00316845
+Part.ActiveView().TranslateBy 0.0115216, -0.00633691
+Part.ActiveView().TranslateBy 0.0115216, -0.00518474
+Part.ActiveView().TranslateBy 0.0120977, -0.00432062
+Part.ActiveView().TranslateBy 0.0146901, -0.00288041
+Part.ActiveView().TranslateBy 0.00921732, 0
+Part.ActiveView().TranslateBy 0.00662495, 0.00172825
+Part.ActiveView().TranslateBy 0.00604887, 0.00201629
+Part.ActiveView().TranslateBy 0.00604887, 0.00374454
+Part.ActiveView().TranslateBy 0.0048967, 0.00432062
+Part.ActiveView().TranslateBy 0.00345649, 0.00518474
+Part.ActiveView().TranslateBy 0.00201629, 0.00345649
+Part.ActiveView().TranslateBy 0.00115216, 0.00259237
+Part.ActiveView().TranslateBy 0.00144021, 0.00345649
+Part.ActiveView().TranslateBy 0.00172825, 0.00403258
+Part.ActiveView().TranslateBy 0.00115216, 0.00259237
+Part.ActiveView().TranslateBy 0.00115216, 0.00172825
+Part.ActiveView().TranslateBy 0.000864124, 0.00144021
+Part.ActiveView().TranslateBy 0.00172825, 0.00144021
+Part.ActiveView().TranslateBy 0.000576082, 0.000576082
+Part.ActiveView().TranslateBy 0.000576082, 0.000864124
+Part.ActiveView().TranslateBy 0.00172825, 0.00201629
+Part.ActiveView().TranslateBy 0.000864124, 0.000864124
+Part.ActiveView().TranslateBy 0, 0.000864124
+Part.ActiveView().TranslateBy 0.000576082, 0.00144021
+Part.ActiveView().TranslateBy 0, 0.00144021
+Part.ActiveView().TranslateBy 0.000288041, 0.000864124
+Part.ActiveView().TranslateBy 0.000576082, 0.00115216
+Part.ActiveView().TranslateBy 0.000288041, 0.000864124
+Part.ActiveView().TranslateBy 0.00144021, 0.00172825
+Part.ActiveView().TranslateBy 0.00345649, 0.00316845
+Part.ActiveView().TranslateBy 0.00259237, 0.00201629
+Part.ActiveView().TranslateBy 0.00259237, 0.00230433
+Part.ActiveView().TranslateBy 0.00201629, 0.00172825
+Part.ActiveView().TranslateBy 0.000288041, 0.000576082
+Part.ViewZoomtofit2
+Part.ViewZoomTo2 -2.04186, -0.561915, 0.248115, -1.67537, -0.846316, 0.248115
+boolstatus = Part.Extension.SelectByID("", "FACE", -0.9671266199445, -0.02098793449483, 0.0171119758503, True, 0, Nothing)
+Part.AddMate 3, 2, False, 0.9013278164019, 1.962592738984
+Part.ClearSelection
+Part.ShowNamedView2 "*Isométrique", 7
+Part.ClearSelection 
+boolstatus = Part.Extension.SelectByID("", "FACE", -0.01555526315789, 0.0105, 0.001, False, 8, Nothing)
+boolstatus = Part.Extension.SelectByID("", "FACE", -0.9855478468465, -0.02830502706188, 0.001, True, 8, Nothing)
+boolstatus = Part.Extension.SelectByID("Parallèle3", "MATE", 0, 0, 0, True, 0, Nothing)
+Part.EditMate 3, 1, False, 0.01, 0.5235987755983
+Part.ClearSelection
+Part.ClearSelection
+Part.TranslateComponent
+boolstatus = Part.Extension.SelectByID("", "EDGE", -0.9530901232177, 0.003047069796196, -0.0006921801821136, False, 0, Nothing)
+Part.ViewZoomTo2 -0.155522, 0.0421158, 0.274473, 0.304856, -0.18586, 0.274473
+Part.ViewZoomTo2 -0.0278502, 0.0524775, 0.274473, 0.07704, -0.112214, 0.274473
+Part.ViewZoomTo2 -0.0167789, 0.0323931, 0.274473, 0.0713915, -0.0855021, 0.274473
+boolstatus = Part.Extension.SelectByID("", "FACE", -0.002665752107532, 0.01318696530723, -0.008750130567137, True, 0, Nothing)
+Part.DeSelectByID "", "EDGE", -0.9530901232177, 0.003047069796196, -0.0006921801821136
+boolstatus = Part.Extension.SelectByID("", "FACE", 0.04178127436813, 0.008603796993668, -0.003545437316177, True, 0, Nothing)
+Part.AddMate 1, 2, False, 0.04872311293609, 0
+Part.ClearSelection
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("", "FACE", -0.006391803833651, 0.009680382420697, 0.01578643075459, True, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("", "FACE", 0.04629745996277, 0.01305370934909, 0.007883905426866, True, 0, Nothing)
+Part.AddMate 1, 2, False, 0.04879679714662, 0
+Part.ClearSelection
+Part.ClearSelection
+Part.ActiveView().RotateAboutCenter 0.00680139, 0
+Part.ActiveView().RotateAboutCenter 0.0136028, -0.0241366
+Part.ActiveView().RotateAboutCenter 0.00680139, -0.0160911
+Part.ActiveView().RotateAboutCenter 0.00680139, -0.0160911
+Part.ActiveView().RotateAboutCenter 0.00680139, -0.0160911
+Part.ActiveView().RotateAboutCenter 0.0136028, -0.0241366
+Part.ActiveView().RotateAboutCenter 0, -0.00804554
+Part.ShowNamedView2 "*Face", 1
+Part.ShowNamedView2 "*Isométrique", 7
+boolstatus = Part.Extension.SelectByID("", "FACE", 0, -0.009663851519292, 0.5837488404919, False, 0, Nothing)
+Part.ActivateSelectedFeature
+boolstatus = Part.Extension.SelectByID("", "FACE", 0, -0.0147497560576, 0.6101192527273, False, 0, Nothing)
+Part.ActivateSelectedFeature
+boolstatus = Part.Extension.SelectByID("Lice-1@Ensemble fourche", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 278
+swApp.ActiveDoc.ActiveView.FrameState = 1
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Lice.SLDPRT")
+Part.ShowNamedView2 "*Isométrique", 7
+boolstatus = Part.Extension.SelectByID("", "FACE", 0.0009972302340202, 1.487738289619, 0.0184999999999, False, 0, Nothing)
+Part.ActivateSelectedFeature
+boolstatus = Part.Extension.SelectByID("Barre", "BODYFEATURE", 0, 0, 0, False, 0, Nothing)
+Part.ClearSelection
+Part.SelectionManager.EnableContourSelection = 0
+Part.Save2 FALSE
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 556
+swApp.ActiveDoc.ActiveView.FrameState = 1
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Ensemble fourche.SLDASM")
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Forme@Noyau-1@Ensemble fourche", "BODYFEATURE", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Extrusion1@Noyau-1@Ensemble fourche", "BODYFEATURE", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Extrusion1@Noyau-1@Ensemble fourche", "BODYFEATURE", 0, 0, 0, False, 0, Nothing)
+Part.ClearSelection
+Part.SelectionManager.EnableContourSelection = 0
+boolstatus = Part.Extension.SelectByID("Noyau-1@Ensemble fourche", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+Part.OpenCompFile
+swApp.LoadFile2 "D:\Documents and Settings\ivan\Bureau\barr  Fichiers SW\SINUSMATIC\Noyau.SLDPRT", ""
+Set Part = swApp.ActiveDoc
+Set Part = swApp.OpenDoc4 ("D:\Documents and Settings\ivan\Bureau\barr  Fichiers SW\SINUSMATIC\Noyau.SLDPRT", 1, 0, "", longstatus)
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Noyau.SLDPRT")
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Noyau.SLDPRT", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+Part.DimPreferences
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 556
+swApp.ActiveDoc.ActiveView.FrameState = 1
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Ensemble fourche.SLDASM")
+boolstatus = Part.Extension.SelectByID("Ensemble fourche.SLDASM", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+Part.EditAssembly
+Part.ClearSelection
+Part.EditRebuild
+' MSGBOX
+' Certains des modèles référencés dans ce document ont été modifiés. Ils doivent être enregistrés lorsque le document est enregistré.
+' 		Enregistrer le document et les modèles référencés maintenant ?
+
+Part.Save2 FALSE
+boolstatus = Part.Extension.SelectByID("Ensemble fourche.SLDASM", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+Part.ToolsMassProps
+Part.ToolsMassProps
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 278
+swApp.ActiveDoc.ActiveView.FrameState = 1
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Lice.SLDPRT")
+Part.ToolsMassProps
+boolstatus = Part.Extension.SelectByID("Lice.SLDPRT", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Lice.SLDPRT", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+Part.DimPreferences
+Part.ToolsMassProps
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 556
+swApp.ActiveDoc.ActiveView.FrameState = 1
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Ensemble fourche.SLDASM")
+Part.ToolsMassProps
+Part.EditRebuild
+Part.ClearSelection
+Part.ToolsMassProps
+boolstatus = Part.Extension.SelectByID("Ensemble fourche.SLDASM", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Noyau.SLDPRT")
+boolstatus = Part.Extension.SelectByID("", "FACE", -0.005237676623665, 0.03230624278655, 0.02255240777919, False, 0, Nothing)
+Part.ActivateSelectedFeature
+boolstatus = Part.Extension.SelectByID("D1@Extrusion1@Noyau.SLDPRT", "DIMENSION", -0.02630793947878, 0.07548580786735, -0.0136829937762, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("D2@Esquisse1@Noyau.SLDPRT", "DIMENSION", -0.006026620614868, 0.0169630869852, 0.02454889742685, False, 0, Nothing)
+Part.Parameter("D2@Esquisse1").SystemValue = 0.04
+Part.EditRebuild
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("", "FACE", 0.01487934410119, 0.05053754421346, 0.02255240777924, False, 0, Nothing)
+Part.ActivateSelectedFeature
+boolstatus = Part.Extension.SelectByID("D2@Esquisse1@Noyau.SLDPRT", "DIMENSION", -0.007857216552934, 0.01830330196724, 0.02503949618781, False, 0, Nothing)
+Part.Parameter("D2@Esquisse1").SystemValue = 0.038
+Part.EditRebuild
+Part.ClearSelection
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 278
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Lice.SLDPRT")
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 556
+swApp.ActiveDoc.ActiveView.FrameState = 1
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Ensemble fourche.SLDASM")
+Part.ClearSelection
+Part.ToolsMassProps
+boolstatus = Part.Extension.SelectByID("Ensemble fourche.SLDASM", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Noyau.SLDPRT")
+boolstatus = Part.Extension.SelectByID("", "FACE", 0.006677789497985, 0.03906704950128, 0.02255240777924, False, 0, Nothing)
+Part.ActivateSelectedFeature
+boolstatus = Part.Extension.SelectByID("D1@Esquisse1@Noyau.SLDPRT", "DIMENSION", -0.01542758668238, 0.02679133018679, 0.02412321752891, False, 0, Nothing)
+Part.EditRebuild
+boolstatus = Part.Extension.SelectByID("D3@Esquisse1@Noyau.SLDPRT", "DIMENSION", 0.01991486699047, 0.01490809067942, 0.000662072159748, False, 0, Nothing)
+Part.EditRebuild
+boolstatus = Part.Extension.SelectByID("D1@Extrusion1@Noyau.SLDPRT", "DIMENSION", -0.02570408759567, 0.07628993685658, -0.01509084396558, False, 0, Nothing)
+Part.Parameter("D1@Extrusion1").SystemValue = 0.25
+Part.EditRebuild
+Part.ClearSelection
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 556
+swApp.ActiveDoc.ActiveView.FrameState = 1
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Ensemble fourche.SLDASM")
+Part.ClearSelection
+Part.ShowNamedView2 "*Isométrique", 7
+boolstatus = Part.Extension.SelectByID("Ensemble fourche.SLDASM", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+Part.ToolsMassProps
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 278
+swApp.ActiveDoc.ActiveView.FrameState = 1
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Lice.SLDPRT")
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Noyau.SLDPRT")
+boolstatus = Part.Extension.SelectByID("", "FACE", -0.005249378696135, 0.1433199599903, 0.02455240777925, False, 0, Nothing)
+Part.ActivateSelectedFeature
+boolstatus = Part.Extension.SelectByID("D1@Extrusion1@Noyau.SLDPRT", "DIMENSION", -0.03470842850344, 0.0929086026338, -0.02270246805393, False, 0, Nothing)
+Part.Parameter("D1@Extrusion1").SystemValue = 0.1
+Part.EditRebuild
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("", "FACE", 0.003504486863733, 0.1159999999999, 0.02092656827762, False, 0, Nothing)
+Part.InsertSketch2 True
+Part.ClearSelection
+Part.SketchRectangle -0.027, -0.005, 0, 0.032, 0.037, 0, 1
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Line2", "SKETCHSEGMENT", 0.0272408241628, 0.0585, 0.02013519948394, False, 0, Nothing)
+Set Annotation = Part.AddDimension2(0.0361215, 0.116, 0.0159443)
+Part.ClearSelection
+Part.Parameter("D1@Esquisse2").SystemValue = 0.042
+boolstatus = Part.Extension.SelectByID("Line1", "SKETCHSEGMENT", 0.008980491482241, 0.0585, -0.005409309621101, False, 0, Nothing)
+Set Annotation = Part.AddDimension2(0.00608678, 0.116, -0.0145894)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("D1@Esquisse2@Noyau.SLDPRT", "DIMENSION", 0, 0, 0, False, 0, Nothing)
+Part.Parameter("D2@Esquisse2").SystemValue = 0.06
+boolstatus = Part.Extension.SelectByID("", "EDGE", -0.01905859859009, 0.116, 0.01774040175534, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Line4", "SKETCHSEGMENT", -0.03272890229084, 0.0585, 0.02562327761198, True, 0, Nothing)
+Set Annotation = Part.AddDimension2(-0.0251454, 0.116, 0.0268207)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("D2@Esquisse2@Noyau.SLDPRT", "DIMENSION", 0, 0, 0, False, 0, Nothing)
+Part.Parameter("D3@Esquisse2").SystemValue = 0.012
+boolstatus = Part.Extension.SelectByID("D3@Esquisse2@Noyau.SLDPRT", "DIMENSION", -0.02434711024074, 0.0585, 0.02352782959945, False, 0, Nothing)
+Part.Parameter("D3@Esquisse2").SystemValue = 0.01
+boolstatus = Part.Extension.SelectByID("D3@Esquisse2@Noyau.SLDPRT", "DIMENSION", -0.02434711024074, 0.0585, 0.02352782959945, False, 0, Nothing)
+Part.Parameter("D3@Esquisse2").SystemValue = 0.011
+Part.ShowNamedView2 "*Isométrique", 7
+boolstatus = Part.Extension.SelectByID("", "FACE", 0.009393640184499, 0.04388026228901, 0.0245524077792, True, 1, Nothing)
+Part.DeSelectByID "", "FACE", 0.007476971887854, 0.05039115473244, 0.0245524077792
+Part.ClearSelection 
+boolstatus = Part.Extension.SelectByID("D3@Esquisse2@Noyau.SLDPRT", "DIMENSION", -0.02434711024074, 0.0585, 0.02352782959945, False, 0, Nothing)
+Part.FeatureManager.FeatureExtrusion True, False, False, 0, 0, 0.2, 0.07, False, False, False, False, 0.01745329251994, 0.01745329251994, False, False, False, False, 1, 1, 1
+Part.SelectionManager.EnableContourSelection = 0
+boolstatus = Part.Extension.SelectByID("", "FACE", 0.007476971887797, 0.06698908995054, 0.0245524077792, False, 0, Nothing)
+Part.ActivateSelectedFeature
+boolstatus = Part.Extension.SelectByID("D1@Extrusion1@Noyau.SLDPRT", "DIMENSION", -0.002393582382079, 0.05253868892154, 0.01132768399014, False, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Noyau.SLDPRT", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+Part.ToolsMassProps
+Part.ToolsMassProps
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 556
+swApp.ActiveDoc.ActiveView.FrameState = 1
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Ensemble fourche.SLDASM")
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble fourche.SLDASM", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+Part.ToolsMassProps
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 278
+swApp.ActiveDoc.ActiveView.FrameState = 1
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Lice.SLDPRT")
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Noyau.SLDPRT")
+boolstatus = Part.Extension.SelectByID("", "FACE", 0.00987280725866, 0.08271000627235, 0.02455240777914, False, 0, Nothing)
+Part.ActivateSelectedFeature
+boolstatus = Part.Extension.SelectByID("D1@Extrusion1@Noyau.SLDPRT", "DIMENSION", 0.0004640388870696, 0.04921874221322, 0.01178946988844, False, 0, Nothing)
+Part.Parameter("D1@Extrusion1").SystemValue = 0.07
+boolstatus = Part.Extension.SelectByID("", "FACE", 0.01273705799588, 0.1476275600526, 0.03699999999981, False, 0, Nothing)
+Part.ActivateSelectedFeature
+boolstatus = Part.Extension.SelectByID("D1@Extrusion2@Noyau.SLDPRT", "DIMENSION", -0.08120377670759, 0.1579469969106, -0.01525329925088, False, 0, Nothing)
+Part.Parameter("D1@Extrusion2").SystemValue = 0.25
+Part.EditRebuild
+Part.ClearSelection
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 556
+swApp.ActiveDoc.ActiveView.FrameState = 1
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Ensemble fourche.SLDASM")
+Part.ClearSelection
+Part.ToolsMassProps
+boolstatus = Part.Extension.SelectByID("Ensemble fourche.SLDASM", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+' MSGBOX
+' Certains des modèles référencés dans ce document ont été modifiés. Ils doivent être enregistrés lorsque le document est enregistré.
+' 		Enregistrer le document et les modèles référencés maintenant ?
+
+Part.Save2 FALSE
+Part.ClearSelection
+Set Part = Nothing
+swApp.CloseDoc "Ensemble fourche.SLDASM"
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Noyau.SLDPRT")
+Set Part = Nothing
+swApp.CloseDoc "Noyau.SLDPRT"
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 278
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Lice.SLDPRT")
+Part.ClearSelection
+Set Part = Nothing
+swApp.CloseDoc "Lice.SLDPRT"
+Set Part = swApp.OpenDoc4 ("D:\Documents and Settings\ivan\Bureau\barr  Fichiers SW\SINUSMATIC.SLDASM", 2, 0, "", longstatus)
+Set Part = swApp.ActivateDoc ("SINUSMATIC.SLDASM")
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+swApp.ActiveDoc.ActiveView.FrameState = 1
+boolstatus = Part.Extension.SelectByID("Ensemble arbre de sortie du reducteur-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Ensemble equerre-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Ensemble equerre-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+Part.OpenCompFile
+swApp.LoadFile2 "D:\Documents and Settings\ivan\Bureau\barr  Fichiers SW\SINUSMATIC\Ensemble equerre.SLDASM", ""
+Set Part = swApp.ActiveDoc
+Set Part = swApp.OpenDoc4 ("D:\Documents and Settings\ivan\Bureau\barr  Fichiers SW\SINUSMATIC\Ensemble equerre.SLDASM", 2, 0, "", longstatus)
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Ensemble equerre.SLDASM")
+Part.ClearSelection
+Part.ActiveView().RotateAboutCenter 0.0218697, 0.0241366
+Part.ActiveView().RotateAboutCenter 0.00728988, 0
+Part.ActiveView().RotateAboutCenter 0.0291595, 0
+Part.ActiveView().RotateAboutCenter 0.0728988, -0.0241366
+Part.ActiveView().RotateAboutCenter 0.0947685, -0.0724099
+Part.ActiveView().RotateAboutCenter 0.0583191, -0.0724099
+Part.ActiveView().RotateAboutCenter 0.0291595, -0.0563188
+Part.ActiveView().RotateAboutCenter 0.0218697, -0.0482733
+Part.ActiveView().RotateAboutCenter 0.00728988, -0.0402277
+Part.ActiveView().RotateAboutCenter 0.0291595, -0.0965465
+Part.ActiveView().RotateAboutCenter 0.0218697, -0.120683
+Part.ActiveView().RotateAboutCenter 0.0218697, -0.0965465
+Part.ActiveView().RotateAboutCenter 0, -0.0563188
+Part.ActiveView().RotateAboutCenter 0.00728988, -0.0321822
+Part.ActiveView().RotateAboutCenter 0.00728988, -0.0402277
+Part.ActiveView().RotateAboutCenter 0.0145798, -0.0482733
+Part.ActiveView().RotateAboutCenter 0.0145798, -0.0482733
+Part.ActiveView().RotateAboutCenter 0.00728988, -0.0241366
+Part.ActiveView().RotateAboutCenter 0.00728988, -0.0160911
+Part.ActiveView().RotateAboutCenter 0.0145798, -0.00804554
+Part.ActiveView().RotateAboutCenter 0.0145798, 0
+Part.ActiveView().RotateAboutCenter 0.0364494, 0.0482733
+Part.ActiveView().RotateAboutCenter 0.0364494, 0.201139
+Part.ActiveView().RotateAboutCenter 0, 0.201139
+Part.ActiveView().RotateAboutCenter -0.0145798, 0.104592
+Part.ActiveView().RotateAboutCenter 0, 0.0241366
+Part.ActiveView().RotateAboutCenter 0, 0.0241366
+Part.ActiveView().RotateAboutCenter 0.00728988, 0.128729
+Part.ActiveView().RotateAboutCenter 0.0218697, 0.321822
+Part.ActiveView().RotateAboutCenter 0, 0.386186
+Part.ActiveView().RotateAboutCenter -0.00728988, 0.193093
+Part.ActiveView().RotateAboutCenter -0.00728988, 0.0402277
+Part.ActiveView().RotateAboutCenter 0, -0.00804554
+Part.ActiveView().RotateAboutCenter 0.0145798, -0.0482733
+Part.ActiveView().RotateAboutCenter 0.0145798, -0.136774
+Part.ActiveView().RotateAboutCenter 0, -0.152865
+Part.ActiveView().RotateAboutCenter 0, -0.0482733
+Part.ActiveView().RotateAboutCenter 0, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.00728988, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0145798, 0.0402277
+Part.ActiveView().RotateAboutCenter -0.00728988, 0.0241366
+Part.ActiveView().RotateAboutCenter -0.00728988, 0.0160911
+Part.ActiveView().RotateAboutCenter 0, -0.0160911
+Part.ActiveView().RotateAboutCenter 0.0145798, -0.0482733
+Part.ActiveView().RotateAboutCenter 0.00728988, -0.168956
+Part.ActiveView().RotateAboutCenter 0, -0.21723
+Part.ActiveView().RotateAboutCenter -0.0145798, -0.21723
+Part.ActiveView().RotateAboutCenter -0.00728988, -0.088501
+Part.ActiveView().RotateAboutCenter -0.00728988, -0.0321822
+Part.ActiveView().RotateAboutCenter 0, -0.00804554
+Part.ActiveView().RotateAboutCenter 0, 0.00804554
+Part.ActiveView().RotateAboutCenter 0, 0.0724099
+Part.ActiveView().RotateAboutCenter 0, 0.088501
+Part.ActiveView().RotateAboutCenter 0, 0.0724099
+Part.ActiveView().RotateAboutCenter -0.00728988, 0.0321822
+Part.ActiveView().RotateAboutCenter -0.00728988, 0.00804554
+Part.ActiveView().RotateAboutCenter 0, 0.0160911
+Part.ActiveView().RotateAboutCenter 0, 0.0321822
+Part.ActiveView().RotateAboutCenter 0, 0.0563188
+Part.ActiveView().RotateAboutCenter 0, 0.0402277
+Part.ActiveView().RotateAboutCenter 0, 0.00804554
+Part.ActiveView().RotateAboutCenter 0, 0.0241366
+Part.ActiveView().RotateAboutCenter 0.00728988, 0.0804554
+Part.ActiveView().RotateAboutCenter 0.0145798, 0.128729
+Part.ActiveView().RotateAboutCenter 0.00728988, 0.0724099
+Part.ActiveView().RotateAboutCenter 0, 0.00804554
+Part.ActiveView().RotateAboutCenter 0.00728988, 0
+boolstatus = Part.Extension.SelectByID("", "FACE", 0.03125000000011, 0.02682002469953, -0.1279673486358, True, 0, Nothing)
+Part.ActiveView().RotateAboutCenter 0.0145798, -0.0160911
+Part.ActiveView().RotateAboutCenter 0.0218697, -0.0643643
+Part.ActiveView().RotateAboutCenter -0.0364494, -0.00804554
+Part.ActiveView().RotateAboutCenter 0.00728988, -0.201139
+Part.ActiveView().RotateAboutCenter 0.0145798, -0.297685
+Part.ActiveView().RotateAboutCenter -0.0364494, -0.241366
+Part.ActiveView().RotateAboutCenter -0.0145798, -0.168956
+Part.ActiveView().RotateAboutCenter -0.0145798, -0.0724099
+Part.ActiveView().RotateAboutCenter -0.00728988, -0.0724099
+Part.ActiveView().RotateAboutCenter -0.0291595, -0.14482
+Part.ActiveView().RotateAboutCenter -0.0145798, -0.088501
+Part.ActiveView().RotateAboutCenter 0, -0.00804554
+boolstatus = Part.Extension.SelectByID("", "FACE", 0.1125, 0.03037606692209, -0.130223343416, True, 0, Nothing)
+Part.ClearSelection
+Set Part = Nothing
+swApp.CloseDoc "Ensemble equerre.SLDASM"
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("SINUSMATIC.SLDASM")
+boolstatus = Part.Extension.SelectByID("Ensemble arbre de sortie du reducteur-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Ensemble fourche-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Ensemble fourche-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+Part.OpenCompFile
+swApp.LoadFile2 "D:\Documents and Settings\ivan\Bureau\barr  Fichiers SW\SINUSMATIC\Ensemble fourche.SLDASM", ""
+Set Part = swApp.ActiveDoc
+Set Part = swApp.OpenDoc4 ("D:\Documents and Settings\ivan\Bureau\barr  Fichiers SW\SINUSMATIC\Ensemble fourche.SLDASM", 2, 0, "", longstatus)
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Ensemble fourche.SLDASM")
+Part.ClearSelection
+Part.ViewZoomTo2 -0.240941, 0.219679, 1.0138, 0.187448, -0.186927, 1.0138
+boolstatus = Part.Extension.SelectByID("", "FACE", -0.1207500000001, 0.0002887660492092, -0.0001764823765598, True, 0, Nothing)
+Part.ActiveView().RotateAboutCenter 0.00680139, 0.00804554
+Part.ActiveView().RotateAboutCenter 0.0748152, 0.0724099
+Part.ActiveView().RotateAboutCenter 0.129226, 0.201139
+Part.ActiveView().RotateAboutCenter 0.088418, 0.160911
+Part.ActiveView().RotateAboutCenter 0.0680139, 0.104592
+Part.ActiveView().RotateAboutCenter 0.0544111, 0.0804554
+Part.ActiveView().RotateAboutCenter 0.0204042, 0.0402277
+Part.ActiveView().RotateAboutCenter 0, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.0136028, -0.00804554
+Part.ActiveView().RotateAboutCenter -0.0272055, -0.0241366
+Part.ActiveView().RotateAboutCenter -0.0272055, -0.0160911
+Part.ActiveView().RotateAboutCenter -0.00680139, 0
+Part.ActiveView().RotateAboutCenter -0.0136028, 0.0724099
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.088501
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.112638
+Part.ActiveView().RotateAboutCenter 0, 0.0563188
+Part.ActiveView().RotateAboutCenter -0.0136028, 0
+Part.ActiveView().RotateAboutCenter -0.00680139, -0.00804554
+Part.ShowNamedView2 "*Isométrique", 7
+Part.ActiveView().RotateAboutCenter 0, 0.0160911
+Part.ActiveView().RotateAboutCenter 0.0408083, 0.120683
+Part.ActiveView().RotateAboutCenter 0.102021, 0.249412
+Part.ActiveView().RotateAboutCenter 0.0476097, 0.201139
+Part.ActiveView().RotateAboutCenter 0.0476097, 0.177002
+Part.ActiveView().RotateAboutCenter 0.0204042, 0.0724099
+Part.ActiveView().RotateAboutCenter 0.00680139, 0.0241366
+Part.ActiveView().RotateAboutCenter 0, 0.00804554
+Part.ActiveView().RotateAboutCenter 0, 0.0241366
+Part.ActiveView().RotateAboutCenter 0, 0.0804554
+Part.ActiveView().RotateAboutCenter 0, 0.0643643
+Part.ActiveView().RotateAboutCenter 0, 0.0804554
+Part.ActiveView().RotateAboutCenter 0, 0.0402277
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.0241366
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.00804554
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.0160911
+Part.ActiveView().RotateAboutCenter -0.0136028, 0.0241366
+Part.ActiveView().RotateAboutCenter -0.0408083, 0.0563188
+Part.ActiveView().RotateAboutCenter -0.0340069, 0.0563188
+Part.ActiveView().RotateAboutCenter -0.0136028, 0.0321822
+Part.ActiveView().RotateAboutCenter -0.00680139, 0.0241366
+Part.ActiveView().RotateAboutCenter 0, 0.00804554
+Part.ViewZoomTo2 -2.13705, 0.366987, 0.994603, -1.9009, 0.0976211, 0.994603
+boolstatus = Part.Extension.SelectByID("", "FACE", -0.03950000000009, -0.001272411051332, 0.007880486379463, True, 0, Nothing)
+Part.ClearSelection
+Set Part = Nothing
+swApp.CloseDoc "Ensemble fourche.SLDASM"
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("SINUSMATIC.SLDASM")
+boolstatus = Part.Extension.SelectByID("Ensemble fourche-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Ensemble fourche-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Coaxial2", "MATE", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Coaxial2", "MATE", 0, 0, 0, False, 0, Nothing)
+Part.EditDelete
+boolstatus = Part.Extension.SelectByID("Ensemble fourche-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Ensemble fourche-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Coïncidente2", "MATE", 0, 0, 0, False, 0, Nothing)
+Part.EditDelete
+Part.TranslateComponent
+boolstatus = Part.Extension.SelectByID("", "EDGE", 0.1396805866842, 0.3090139842901, -0.1252298439649, False, 0, Nothing)
+Part.ViewZoomTo2 -0.190144, 0.273311, 0.522881, 0.317275, -0.112327, 0.522881
+boolstatus = Part.Extension.SelectByID("", "FACE", 0.08754930300807, -0.02958081599246, -0.1473220408437, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("", "FACE", 0.0414598150731, 0.02335017924912, -0.105322108793, True, 0, Nothing)
+Part.AddMate 1, 2, False, 0.02364448579879, 0.3314148065763
+Part.ClearSelection
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble equerre-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Ensemble equerre-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+Part.OpenCompFile
+swApp.LoadFile2 "D:\Documents and Settings\ivan\Bureau\barr  Fichiers SW\SINUSMATIC\Ensemble equerre.SLDASM", ""
+Set Part = swApp.ActiveDoc
+Set Part = swApp.OpenDoc4 ("D:\Documents and Settings\ivan\Bureau\barr  Fichiers SW\SINUSMATIC\Ensemble equerre.SLDASM", 2, 0, "", longstatus)
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Ensemble equerre.SLDASM")
+Part.ClearSelection
+Part.ShowNamedView2 "*Isométrique", 7
+boolstatus = Part.Extension.SelectByID("", "FACE", 0.1124999999999, 0.01900122173015, -0.1226692196824, True, 0, Nothing)
+Part.CreatePlaneAtOffset3  0.040625, True, True
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("PLAN1", "PLANE", 0, 0, 0, False, 0, Nothing)
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("SINUSMATIC.SLDASM")
+boolstatus = Part.Extension.SelectByID("Ensemble fourche-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Ensemble fourche-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+Part.OpenCompFile
+swApp.LoadFile2 "D:\Documents and Settings\ivan\Bureau\barr  Fichiers SW\SINUSMATIC\Ensemble fourche.SLDASM", ""
+Set Part = swApp.ActiveDoc
+Set Part = swApp.OpenDoc4 ("D:\Documents and Settings\ivan\Bureau\barr  Fichiers SW\SINUSMATIC\Ensemble fourche.SLDASM", 2, 0, "", longstatus)
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("Ensemble fourche.SLDASM")
+Part.ClearSelection
+Part.ViewZoomTo2 -0.215528, 0.187005, 1.0138, 0.103948, -0.190558, 1.0138
+boolstatus = Part.Extension.SelectByID("", "FACE", -0.12075, 0.001567960437342, -0.001478810336664, False, 0, Nothing)
+Part.CreatePlaneAtOffset3  0.040625, False, True
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("PLAN1", "PLANE", 0, 0, 0, False, 0, Nothing)
+swApp.ActiveDoc.ActiveView.FrameLeft = 0
+swApp.ActiveDoc.ActiveView.FrameTop = 0
+swApp.ActiveDoc.ActiveView.FrameState = 1
+Set Part = swApp.ActivateDoc ("SINUSMATIC.SLDASM")
+boolstatus = Part.Extension.SelectByID("PLAN1@Ensemble equerre-1@SINUSMATIC", "PLANE", 0, 0, 0, True, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("PLAN1@Ensemble fourche-1@SINUSMATIC", "PLANE", 0, 0, 0, True, 0, Nothing)
+Part.AddMate 0, 2, False, 0.02186039781327, 0
+Part.ClearSelection
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("PLAN1@Ensemble equerre-1@SINUSMATIC", "PLANE", 0, 0, 0, False, 0, Nothing)
+Part.BlankRefGeom
+boolstatus = Part.Extension.SelectByID("PLAN1@Ensemble fourche-1@SINUSMATIC", "PLANE", 0, 0, 0, False, 0, Nothing)
+Part.BlankRefGeom
+' MSGBOX
+' Certains des modèles référencés dans ce document ont été modifiés. Ils doivent être enregistrés lorsque le document est enregistré.
+' 		Enregistrer le document et les modèles référencés maintenant ?
+
+Part.Save2 FALSE
+boolstatus = Part.Extension.SelectByID("", "EDGE", 0.1019010521715, 0.04044602495964, -0.1534315360522, True, 0, Nothing)
+Part.ClearSelection
+Part.SetPickMode
+boolstatus = Part.Extension.SelectByID("", "EDGE", 0.1442701710101, 0.1782365985301, -0.1326724862702, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("", "EDGE", -0.07415088959988, -0.004710769517942, -0.01084924841547, True, 0, Nothing)
+Part.AddMate 3, 2, False, 0.2190000000001, 0.01768273221302
+Part.ClearSelection
+Part.AddMate 0, 2, False, 0.2190000000001, 0.01768273221302
+Part.ClearSelection
+' MSGBOX
+' Cette contrainte contient des erreurs.  Veuillez utiliser l'outil de Diagnostic de contraintes pour analyser le problème.
+
+Part.ClearSelection
+Part.SetPickMode
+boolstatus = Part.Extension.SelectByID("", "EDGE", -0.07504694642893, 0.01366913931702, -0.009953045940222, True, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("", "EDGE", 0.143596568511, 0.1515441718025, -0.1315143847447, True, 0, Nothing)
+Part.AddMate 0, 2, False, 0.2190000000001, 0.01768273221302
+Part.ClearSelection
+' MSGBOX
+' Cette contrainte contient des erreurs.  Veuillez utiliser l'outil de Diagnostic de contraintes pour analyser le problème.
+
+Part.ClearSelection
+Part.SetPickMode
+Part.SetPickMode
+boolstatus = Part.Extension.SelectByID("", "EDGE", 0.1443153560197, 0.1933947630909, -0.1329865724471, True, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("", "EDGE", -0.07474168067392, 0.02248588330423, -0.0102583613135, True, 0, Nothing)
+Part.AddMate 3, 2, False, 0.2190000000001, 0.01768273221302
+Part.ClearSelection
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Parallèle2", "MATE", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Coïncidente8", "MATE", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Parallèle2", "MATE", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Coïncidente8", "MATE", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Parallèle2", "MATE", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Parallèle2", "MATE", 0, 0, 0, False, 0, Nothing)
+Part.EditSuppress
+Part.ClearSelection
+Part.ShowNamedView2 "*Face", 1
+Part.EditRebuild
+Part.Save2 FALSE
+Part.ShowNamedView2 "*Isométrique", 7
+boolstatus = Part.Extension.SelectByID("Ensemble arbre de sortie du reducteur-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Ensemble fourche-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Ensemble croisillon-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Ensemble equerre-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Ensemble rotule-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble equerre-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble equerre-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Ensemble arbre de sortie du reducteur-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble croisillon-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Ensemble fourche-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble rotule-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Ensemble croisillon-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble equerre-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Ensemble arbre de sortie du reducteur-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble rotule-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+Part.ViewZoomTo2 -0.233842, 0.450006, 1.08212, 0.538409, -0.234316, 1.08212
+boolstatus = Part.Extension.SelectByID("Ensemble rotule-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble rotule-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble croisillon-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Ensemble fourche-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble rotule-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Ensemble croisillon-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble arbre de sortie du reducteur-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Ensemble rotule-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble equerre-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Ensemble fourche-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble equerre-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Ensemble fourche-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble croisillon-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble rotule-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble equerre-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Ensemble arbre de sortie du reducteur-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Fourche-1@Ensemble fourche", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Roulement combine a aiguilles RAX715-2@Ensemble fourche", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Roulement combine a aiguilles RAX715-1@Ensemble fourche", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Ecrou H M6-1@Ensemble fourche", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Clavette parallele B, 6 x 6 x 25 mm - NF E 27-656-1@Ensemble fourche", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Lice-1@Ensemble fourche", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Ecrou H M6-2@Ensemble fourche", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Noyau-1@Ensemble fourche", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Vis CHc M6x30-2@Ensemble fourche", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Vis CHc M6x30-1@Ensemble fourche", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+Part.ClearSelection
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble equerre-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble equerre-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble arbre de sortie du reducteur-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble rotule-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble arbre de sortie du reducteur-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble equerre-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Ensemble arbre de sortie du reducteur-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble equerre-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Ensemble arbre de sortie du reducteur-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble fourche-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble croisillon-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble fourche-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble equerre-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble rotule-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble fourche-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble equerre-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble equerre-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble arbre de sortie du reducteur-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble fourche-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble rotule-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble fourche-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble equerre-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Ensemble arbre de sortie du reducteur-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.TranslateComponent
+boolstatus = Part.Extension.SelectByID("", "EDGE", 0.1430900914867, 0.2504841821955, -0.0988899435884, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("", "VERTEX", -0.06815431018518, 0.07972918618039, -0.08279137802865, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("", "FACE", 0.1440000000001, 0.05719909624457, -0.285935765903, False, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble croisillon-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+Part.WindowRedraw
+boolstatus = Part.Extension.SelectByID("Ensemble arbre de sortie du reducteur-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble equerre-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Ensemble arbre de sortie du reducteur-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble fourche-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble equerre-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble arbre de sortie du reducteur-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble fourche-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble croisillon-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble rotule-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble croisillon-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble rotule-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
+Part.ClearSelection
+boolstatus = Part.Extension.SelectByID("Ensemble equerre-1@SINUSMATIC", "COMPONENT", 0, 0, 0, False, 0, Nothing)
+boolstatus = Part.Extension.SelectByID("Ensemble arbre de sortie du reducteur-1@SINUSMATIC", "COMPONENT", 0, 0, 0, True, 0, Nothing)
