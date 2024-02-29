@@ -1,4 +1,4 @@
-Les fichiers assemblages sont sur le repertoire "Composants barriere levante" et ils sont les suivantes:
+Les fichiers assemblages sont les suivantes:
 * Barriere.SLDASM
 * Barriere pivot.SLDASM
 
