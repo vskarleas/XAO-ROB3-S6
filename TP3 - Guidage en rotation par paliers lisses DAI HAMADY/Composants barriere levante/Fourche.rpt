@@ -1,0 +1,72 @@
+*****************************************************************
+      SolidWorks Corporation - Compte-rendu d'état du Processeur IGES
+*****************************************************************
+=================================================================
+Informations générales
+=================================================================
+Envoi de l'identification du produit système en cours  : Fourche
+Réception de l'identification du produit système en cours: Fourche
+Nom de fichier                    : H:\Travail\POLYTECH\Robotique\XAO2 - S6\TP04\SINUSMATIC\TP04 - Barrière levante motorisée\Composants barrière levante\Fourche.IGS
+Envoi du système en cours               : SolidWorks 2014
+Version du préprocesseur         : SolidWorks 2014
+Date de création du fichier           : 150211.151157
+Date de création du modèle          : 150211.151157
+Unités                        : MM
+Echelle de l'espace modèle            : 1
+Auteur                       : LCarillet
+Organisation                 : 
+
+
+=================================================================
+Informations sur le traitement des entités
+=================================================================
+
+
+=================================================================
+Analyse de précision d'un fichier IGES:
+=================================================================
+  Nombre le plus répandu de chiffres significatifs:              11
+  Nombre le plus grand de chiffres significatifs:                     13
+  Nombre moyen de chiffres significatifs :                 7.5768
+  Distance maximale jusqu'à l'origine:                          1878.25
+  Distance minimale jusqu'à l'origine:                                0
+  Nombre effectif de chiffres significatifs:                   13
+
+
+=================================================================
+Récapitulatif des entités
+=================================================================
+-----------------------------------------------------------------
+Nom de type                                         Nombre converti
+---- ----                                         ----- ---------
+100  Arc                                            203       203
+110  Line                                           266       266
+116  Point                                           28        28
+120  Surface of revolution                           91        91
+123  Direction                                       56        56
+124  Transformation matrix                          195       195
+126  Rational B-spline curve                         89        89
+128  Rational B-spline surface                       43        43
+186  Manifold Solid B-rep Object                      1         1
+190  Plane surface entity                            28        28
+314  Color definition                                19        19
+502  Vertex list                                      1         1
+504  Edge entity                                      1         1
+508  Loop entity                                    168       168
+510  Face entity                                    162       162
+514  Shell entity                                     1         1
+_________________________________________________________________
+
+
+=================================================================
+Récapitulatif des résultats
+=================================================================
+Type de fonction SolidWorks                Nombre
+-----------------------                -----
+Fonction(s) volumique(s)                       1
+Fonction(s) surfacique(s)                     0
+Fonction(s) de courbe/d'esquisse                0
+--------------------------------------------
+Heure de début: mercredi, février 11, 2015 15:12:31
+Heure de fin: mercredi, février 11, 2015 15:12:32
+Durée de traitement: 0 days, 00 hours, 00 mins, 01 secs
