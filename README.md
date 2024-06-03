@@ -1,6 +1,6 @@
 ## XAO Course for ROB3-S6
 
-This repository contains materials for the XAO (CAO) course taught to ROB3 students at Polytech Sorbonne. 
+This repository contains materials from the XAO (CAO) ROB3 program at Polytech Sorbonne. Material maybe subject to copyright from its respective creator or owner.
 
 **Ownership of Files:**
 
