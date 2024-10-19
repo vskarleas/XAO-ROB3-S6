@@ -64,5 +64,5 @@ Bien que le matériel de ce dépôt soit destiné à des fins éducatives, il es
 
 **Contribution:**
 
-Les contributions à ce dépôt sont les bienvenues, mais veuillez vous assurer que toutes les soumissions respectent les directives de propriété et sont pertinentes au programme du cours XAO.
+Les contributions à ce dépôt sont les bienvenues, mais veuillez vous assurer que toutes les soumissions respectent les directives de propriété et sont pertinentes au programme du cours XAO
 
